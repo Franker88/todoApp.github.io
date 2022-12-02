@@ -1,0 +1,78 @@
+.TodoForm {
+  background-color: azure;
+  width: 300px;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 10px 0px 20px 10px rgba(95, 95, 95, 0.418);
+}
+
+.TodoForm > label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.TodoForm > textarea {
+  width: 70%;
+  height: 30%;
+  outline: none;
+  border: 2px solid rgba(88, 255, 199, 0.829);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 10px;
+  resize: none;
+  box-shadow: 5px 0px 10px 5px rgba(65, 65, 65, 0.411);
+}
+
+.TodoForm > .buttonDiv {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  font-family: "Nerko One", cursive;
+  font-size: 15px;
+}
+
+.buttonCancel {
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.buttonCancel:hover {
+  background-color: rgb(146, 153, 153);
+  border-top: 1px solid rgb(73, 77, 77);
+  border-left: 1px solid rgb(73, 77, 77);
+}
+
+.buttonAdd {
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: rgb(88, 255, 199);
+}
+
+.buttonAdd:hover {
+  border-bottom: 1px solid rgb(50, 145, 113);
+  border-right: 1px solid rgb(50, 145, 113);
+  box-shadow: 2px 0px 10px 2px rgba(65, 65, 65, 0.411);
+}
+
+@media (min-width: 1024px) {
+  .TodoForm {
+    width: 40%;
+    height: 30%;
+  }
+
+  .TodoForm > label {
+    font-size: 30px;
+  }
+}

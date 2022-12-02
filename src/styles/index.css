@@ -1,0 +1,12 @@
+body {
+  padding-top: 100px;
+  margin: 0;
+  font-family: "Nerko One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(197, 197, 197);
+}
+
+code {
+  font-family: "Nerko One", cursive;
+}

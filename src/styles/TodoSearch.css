@@ -1,0 +1,25 @@
+.TodoSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.TodoSearch > input {
+  outline: none;
+  transition: 0.4s;
+  font-family: "Nerko One", cursive;
+  border-radius: 0px;
+  border: 1px solid rgb(48, 48, 48);
+  height: 40px;
+  width: 250px;
+  text-align: center;
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.87);
+  box-shadow: 2px 0px 20px 2px rgba(83, 83, 83, 0.507);
+}
+
+.TodoSearch > input:focus {
+  border-radius: 0px;
+  border: 2px solid rgb(112, 216, 248);
+}

@@ -1,0 +1,14 @@
+.ModalBG {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: rgba(48, 48, 48, 0.507);
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
