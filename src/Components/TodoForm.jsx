@@ -30,6 +30,7 @@ const TodoForm = () => {
         placeholder="Escribir nueva tarea..."
         value={newTask}
         onChange={onWrite}
+        maxLength="45"
       ></textarea>
       <div className="buttonDiv">
         <button className="buttonCancel" type="button" onClick={onCancel}>

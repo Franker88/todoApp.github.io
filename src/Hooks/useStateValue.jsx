@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
-const useStateValue = (item, saveItem) => {
+const useStateValue = () => {
+  const { item, saveItem } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = useState("");
   const [openModal, setOpenModal] = useState(false);
 

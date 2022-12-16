@@ -1,16 +1,14 @@
 import React from "react";
 import "../styles/TodoItem.css";
+import { CompleteIcon } from "./CompleteIcon";
+import { DeleteIcon } from "./DeleteIcon";
 
 const TodoItem = (props) => {
   return (
     <li className={`TodoItem ${props.completed ? "CheckedTask" : ""}`}>
-      <span className="check" onClick={props.onComplete}>
-        √
-      </span>
+      <CompleteIcon completed={props.completed} onComplete={props.onComplete} />
       <span className="task">{props.text}</span>
-      <span className="cerrar" onClick={props.onErase}>
-        X
-      </span>
+      <DeleteIcon onDelete={props.onErase} />
     </li>
   );
 };

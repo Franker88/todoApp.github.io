@@ -29,7 +29,8 @@
 }
 
 .task {
-  margin-left: -50px;
+  margin-left: -10px;
+  width: 200px;
 }
 
 .CheckedTask {

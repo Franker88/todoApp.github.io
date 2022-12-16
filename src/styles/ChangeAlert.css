@@ -1,0 +1,39 @@
+.Sincronizer-container {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: rgba(48, 48, 48, 0.507);
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.Sincronizer-message {
+  position: absolute;
+  bottom: 0px;
+  background-color: rgb(19, 19, 19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 25%;
+}
+
+.Sincronizer-message > p {
+  color: rgb(197, 224, 213);
+  width: 70%;
+  text-align: center;
+}
+
+.Sincronizer-message > button {
+  border: none;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(88, 255, 199);
+}

@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import { AppContext } from "../Context/AppContext";
+import React from "react";
 import "../styles/TodoCounter.css";
 
-const TodoCounter = () => {
-  const { totalItem, completedItem } = useContext(AppContext);
-
+const TodoCounter = ({ totalItem, completedItem, loading }) => {
   return (
-    <h2 className="TodoCounter">
+    <h2 className={`TodoCounter ${!!loading && "TodoCounter--loading"}`}>
       Tareas por hacer completadas: {completedItem}/{totalItem}
     </h2>
   );

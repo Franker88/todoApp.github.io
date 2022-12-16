@@ -23,3 +23,11 @@
   border-radius: 0px;
   border: 2px solid rgb(112, 216, 248);
 }
+
+.TodoSearch > input:disabled {
+  opacity: 25%;
+}
+
+.TodoSearch > input:disabled:hover {
+  cursor: not-allowed;
+}
