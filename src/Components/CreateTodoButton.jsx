@@ -3,7 +3,10 @@ import "../styles/CreateTodoButton.css";
 import { AppContext } from "../Context/AppContext";
 
 const CreateTodoButton = () => {
-  const { openModal, setOpenModal } = useContext(AppContext);
+  const { state, updaters } = useContext(AppContext);
+  const { openModal } = state;
+  const { setOpenModal } = updaters;
+
   const CreateTask = () => {
     setOpenModal(!openModal);
   };

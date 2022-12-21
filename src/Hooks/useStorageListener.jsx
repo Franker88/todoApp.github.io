@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 
 const useStorageListener = () => {
@@ -6,7 +5,6 @@ const useStorageListener = () => {
 
   window.addEventListener("storage", (change) => {
     if (change.key === "TODOS_V1") {
-      console.log("Hubo Cambios");
       setStorageChange(true);
     }
   });

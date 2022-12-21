@@ -19,21 +19,29 @@ const TodoProvider = (props) => {
     setOpenModal,
   } = useStateValue(item, saveItem);
 
+  const state = {
+    loading,
+    error,
+    completedItem,
+    totalItem,
+    searchedItem,
+    openModal,
+  };
+
+  const updaters = {
+    addItem,
+    completeTodo,
+    eraseTodo,
+    searchValue,
+    setOpenModal,
+    setSearchValue,
+  };
+
   return (
     <AppContext.Provider
       value={{
-        loading,
-        error,
-        searchValue,
-        setSearchValue,
-        completedItem,
-        totalItem,
-        searchedItem,
-        addItem,
-        completeTodo,
-        eraseTodo,
-        openModal,
-        setOpenModal,
+        state,
+        updaters,
       }}
     >
       {props.children}

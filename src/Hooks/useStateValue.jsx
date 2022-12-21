@@ -42,11 +42,11 @@ const useStateValue = () => {
   };
 
   return {
-    searchValue,
-    setSearchValue,
     completedItem,
     totalItem,
     searchedItem,
+    searchValue,
+    setSearchValue,
     addItem,
     completeTodo,
     eraseTodo,

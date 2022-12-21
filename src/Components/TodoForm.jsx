@@ -4,7 +4,8 @@ import "../styles/TodoForm.css";
 
 const TodoForm = () => {
   const [newTask, setNewTask] = useState("");
-  const { addItem, setOpenModal } = useContext(AppContext);
+  const { updaters } = useContext(AppContext);
+  const { addItem, setOpenModal } = updaters;
 
   const onWrite = (event) => {
     setNewTask(event.target.value);

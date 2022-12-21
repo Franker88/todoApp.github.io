@@ -15,18 +15,11 @@ import { EmptySearch } from "../Components/EmptySearch";
 import { ChangeAlert } from "../Components/ChangeAlert";
 
 const AppUI = () => {
-  const {
-    error,
-    loading,
-    totalItem,
-    completedItem,
-    searchedItem,
-    completeTodo,
-    eraseTodo,
-    openModal,
-    searchValue,
-    setSearchValue,
-  } = useContext(AppContext);
+  const { state, updaters } = useContext(AppContext);
+
+  const { loading, error, completedItem, totalItem, searchedItem, openModal } =
+    state;
+  const { completeTodo, eraseTodo, searchValue, setSearchValue } = updaters;
 
   return (
     <React.Fragment>
