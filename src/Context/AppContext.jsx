@@ -5,7 +5,7 @@ import { useLocalStorage } from "../Hooks/useLocalStorage";
 const AppContext = createContext();
 
 const TodoProvider = (props) => {
-  const { item, saveItem, loading, error } = useLocalStorage("TODOS_V1", []);
+  const { item, saveItem, loading, error } = useLocalStorage("TODOS_V2", []);
   const {
     searchValue,
     setSearchValue,
@@ -14,18 +14,21 @@ const TodoProvider = (props) => {
     searchedItem,
     addItem,
     completeTodo,
+    editTodo,
     eraseTodo,
+    getItem,
     openModal,
     setOpenModal,
   } = useStateValue(item, saveItem);
 
   const state = {
-    loading,
-    error,
     completedItem,
-    totalItem,
-    searchedItem,
+    error,
+    loading,
     openModal,
+    searchedItem,
+    totalItem,
+    getItem,
   };
 
   const updaters = {
@@ -35,6 +38,7 @@ const TodoProvider = (props) => {
     searchValue,
     setOpenModal,
     setSearchValue,
+    editTodo,
   };
 
   return (

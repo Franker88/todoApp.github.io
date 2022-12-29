@@ -4,9 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 30px;
-  font-size: 20px;
+  width: 340px;
+  height: 35px;
+  font-size: 18px;
   padding: 10px;
   background-color: rgba(224, 224, 224, 0.87);
   box-shadow: 2px 0px 20px 2px rgba(83, 83, 83, 0.507);

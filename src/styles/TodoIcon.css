@@ -9,7 +9,12 @@
 
 .Icon-container--delete {
   position: absolute;
-  right: 10px;
+  right: 0px;
+}
+
+.Icon-container--edit {
+  position: absolute;
+  right: 30px;
 }
 
 .Icon-container--check {
@@ -29,4 +34,8 @@
 
 .Icon-container:hover .Icon-svg--delete {
   fill: red;
+}
+
+.Icon-container:hover .Icon-svg--edit {
+  fill: blue;
 }

@@ -1,3 +1,7 @@
+.divButton {
+  margin-top: 20px;
+}
+
 .CreateTodoButton {
   position: fixed;
   width: 50px;
@@ -16,18 +20,13 @@
   cursor: pointer;
 }
 
-.ModalButton {
-  transform: rotate(45deg);
-  z-index: 3;
-  top: 10px;
+.CreateTodoButton:disabled {
+  opacity: 25%;
+  cursor: not-allowed;
 }
 
 @media (min-width: 1024px) {
   .CreateTodoButton {
     right: 484px;
-  }
-
-  .ModalButton {
-    right: 10px;
   }
 }

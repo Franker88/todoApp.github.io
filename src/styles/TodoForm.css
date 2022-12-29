@@ -1,12 +1,10 @@
 .TodoForm {
-  background-color: azure;
-  width: 300px;
-  height: 30%;
+  width: 80%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 10px 0px 20px 10px rgba(95, 95, 95, 0.418);
 }
 
 .TodoForm > label {
@@ -15,8 +13,8 @@
 }
 
 .TodoForm > textarea {
-  width: 70%;
-  height: 30%;
+  width: 80%;
+  height: 100px;
   outline: none;
   border: 2px solid rgba(88, 255, 199, 0.829);
   border-radius: 5px;
@@ -25,6 +23,11 @@
   padding-top: 10px;
   resize: none;
   box-shadow: 5px 0px 10px 5px rgba(65, 65, 65, 0.411);
+  transition: 0.5s;
+}
+
+.TodoForm > textarea:focus {
+  border: 2px solid rgba(19, 19, 19, 0.548);
 }
 
 .TodoForm > .buttonDiv {
@@ -40,6 +43,7 @@ button {
 }
 
 .buttonCancel {
+  background: none;
   width: 70px;
   height: 30px;
   border-radius: 5px;
@@ -58,21 +62,37 @@ button {
   border-radius: 5px;
   border: 0px;
   background-color: rgb(88, 255, 199);
+  color: black;
+}
+
+.buttonAdd:disabled {
+  opacity: 25%;
+  cursor: not-allowed;
 }
 
 .buttonAdd:hover {
-  border-bottom: 1px solid rgb(50, 145, 113);
-  border-right: 1px solid rgb(50, 145, 113);
+  border-bottom: 2px solid rgb(75, 78, 78);
+  border-right: 2px solid rgb(101, 105, 104);
   box-shadow: 2px 0px 10px 2px rgba(65, 65, 65, 0.411);
 }
 
 @media (min-width: 1024px) {
-  .TodoForm {
-    width: 40%;
-    height: 30%;
-  }
-
   .TodoForm > label {
     font-size: 30px;
+  }
+
+  .TodoForm > textarea {
+    width: 80%;
+    height: 200px;
+  }
+
+  .buttonCancel {
+    width: 100px;
+    height: 50px;
+  }
+
+  .buttonAdd {
+    width: 100px;
+    height: 50px;
   }
 }

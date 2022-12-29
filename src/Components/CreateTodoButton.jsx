@@ -1,21 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../styles/CreateTodoButton.css";
-import { AppContext } from "../Context/AppContext";
+import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../Hooks/useLocalStorage";
 
 const CreateTodoButton = () => {
-  const { state, updaters } = useContext(AppContext);
-  const { openModal } = state;
-  const { setOpenModal } = updaters;
-
-  const CreateTask = () => {
-    setOpenModal(!openModal);
-  };
+  const { loading } = useLocalStorage("TODOS_V2", []);
+  const navigate = useNavigate();
 
   return (
     <div className="divButton">
       <button
-        className={`CreateTodoButton ${openModal ? "ModalButton" : ""}`}
-        onClick={CreateTask}
+        className="CreateTodoButton"
+        onClick={() => navigate("/new")}
+        disabled={loading}
       >
         +
       </button>

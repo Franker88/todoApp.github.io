@@ -2,9 +2,8 @@ import { useState } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 const useStateValue = () => {
-  const { item, saveItem } = useLocalStorage("TODOS_V1", []);
+  const { item, saveItem } = useLocalStorage("TODOS_V2", []);
   const [searchValue, setSearchValue] = useState("");
-  const [openModal, setOpenModal] = useState(false);
 
   const completedItem = item.filter((todo) => !!todo.completed).length;
   const totalItem = item.length;
@@ -20,24 +19,45 @@ const useStateValue = () => {
       return todoText.includes(searchText);
     });
   }
+
+  const getItem = (id) => {
+    const todoIndex = item.findIndex((todo) => todo.id === id);
+    return item[todoIndex].text;
+  };
+
   const addItem = (text) => {
+    const id = newTodoId(item);
     const newItem = [...item];
     newItem.push({
       completed: false,
       text: text,
+      id,
     });
     saveItem(newItem);
   };
 
-  const completeTodo = (text) => {
-    const todoIndex = item.findIndex((todo) => todo.text === text);
+  const newTodoId = (item) => {
+    const ids = item.map((todos) => todos.id);
+    const maxId = Math.max([...ids]);
+    return maxId + 1;
+  };
+
+  const completeTodo = (id) => {
+    const todoIndex = item.findIndex((todo) => todo.id === id);
     const newItem = [...item];
     newItem[todoIndex].completed = true;
     saveItem(newItem);
   };
 
-  const eraseTodo = (text) => {
-    const newItem = item.filter((todo) => todo.text !== text);
+  const editTodo = (id, newText) => {
+    const todoIndex = item.findIndex((todo) => todo.id === id);
+    const newItem = [...item];
+    newItem[todoIndex].text = newText;
+    saveItem(newItem);
+  };
+
+  const eraseTodo = (id) => {
+    const newItem = item.filter((todo) => todo.id !== id);
     saveItem(newItem);
   };
 
@@ -50,8 +70,8 @@ const useStateValue = () => {
     addItem,
     completeTodo,
     eraseTodo,
-    openModal,
-    setOpenModal,
+    editTodo,
+    getItem,
   };
 };
 

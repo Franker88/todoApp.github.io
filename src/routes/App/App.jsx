@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoProvider } from "../Context/AppContext";
+import { TodoProvider } from "../../Context/AppContext";
 import { AppUI } from "./AppUI";
 
 const App = () => {

@@ -3,9 +3,6 @@ import { useEffect, useReducer } from "react";
 const useLocalStorage = (itemName, initialValue) => {
   const [state, dispatch] = useReducer(reducer, initialState({ initialValue }));
   const { error, loading, item } = state;
-  /*   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [item, setItem] = useState(initialValue); */
 
   //ACTION CREATORS
   const onError = (item) =>
@@ -16,9 +13,14 @@ const useLocalStorage = (itemName, initialValue) => {
 
   const onSave = (item) => dispatch({ type: actionTypes.save, payload: item });
 
+  const onLoad = () => dispatch({ type: actionTypes.load });
+
+  const onCharge = () => dispatch({ type: actionTypes.charge });
+
   useEffect(() => {
     setTimeout(() => {
       try {
+        onLoad();
         const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
 
@@ -33,6 +35,7 @@ const useLocalStorage = (itemName, initialValue) => {
       } catch (error) {
         onError(error);
       }
+      onCharge();
     }, 3000);
   }, []);
 
@@ -61,6 +64,8 @@ const actionTypes = {
   error: "ERROR",
   success: "SUCCESS",
   save: "SAVE",
+  load: "LOAD",
+  charge: "CHARGE",
 };
 
 const reducerObject = (state, payload) => ({
@@ -72,6 +77,8 @@ const reducerObject = (state, payload) => ({
     item: payload,
   },
   [actionTypes.save]: { ...state, item: payload },
+  [actionTypes.load]: { ...state, loading: true },
+  [actionTypes.charge]: { ...state, loading: false },
 });
 
 const reducer = (state, action) => {

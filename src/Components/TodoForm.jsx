@@ -1,29 +1,30 @@
-import React, { useContext, useState } from "react";
-import { AppContext } from "../Context/AppContext";
+import React, { useState } from "react";
 import "../styles/TodoForm.css";
+import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../Hooks/useLocalStorage";
 
-const TodoForm = () => {
-  const [newTask, setNewTask] = useState("");
-  const { updaters } = useContext(AppContext);
-  const { addItem, setOpenModal } = updaters;
+const TodoForm = (props) => {
+  const navigate = useNavigate();
+  const [newTask, setNewTask] = useState(props.defaultText);
+  const { loading } = useLocalStorage("TODOS_V2", []);
 
   const onWrite = (event) => {
     setNewTask(event.target.value);
   };
 
   const onCancel = () => {
-    setOpenModal(false);
+    navigate("/");
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    addItem(newTask);
-    setOpenModal(false);
+    props.submitEvent(newTask);
+    navigate("/");
   };
 
   return (
     <form onSubmit={onSubmit} className="TodoForm">
-      <label>Escribe tu nueva tarea</label>
+      <label>{props.label}</label>
       <textarea
         required
         name="textTask"
@@ -37,8 +38,8 @@ const TodoForm = () => {
         <button className="buttonCancel" type="button" onClick={onCancel}>
           Cancelar
         </button>
-        <button className="buttonAdd" type="submit">
-          Agregar
+        <button className="buttonAdd" type="submit" disabled={loading}>
+          {props.submitText}
         </button>
       </div>
     </form>
