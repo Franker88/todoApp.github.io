@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/todoApp.github.io/static/css/main.4c3f01c3.css",
-    "main.js": "/todoApp.github.io/static/js/main.8c24b161.js",
+    "main.css": "/todoApp.github.io/static/css/main.11333b5e.css",
+    "main.js": "/todoApp.github.io/static/js/main.c9675369.js",
     "index.html": "/todoApp.github.io/index.html",
+    "static/media/edit.svg": "/todoApp.github.io/static/media/edit.b6dc5de3e4a4a24718eecd0faf0613cc.svg",
     "static/media/delete.svg": "/todoApp.github.io/static/media/delete.84e4a932c97ebd0c6c78dd05068de6fb.svg",
     "static/media/check.svg": "/todoApp.github.io/static/media/check.869a5e77f19ab8e1fd324a52c184d1b0.svg",
-    "main.4c3f01c3.css.map": "/todoApp.github.io/static/css/main.4c3f01c3.css.map",
-    "main.8c24b161.js.map": "/todoApp.github.io/static/js/main.8c24b161.js.map"
+    "main.11333b5e.css.map": "/todoApp.github.io/static/css/main.11333b5e.css.map",
+    "main.c9675369.js.map": "/todoApp.github.io/static/js/main.c9675369.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c3f01c3.css",
-    "static/js/main.8c24b161.js"
+    "static/css/main.11333b5e.css",
+    "static/js/main.c9675369.js"
   ]
 }
